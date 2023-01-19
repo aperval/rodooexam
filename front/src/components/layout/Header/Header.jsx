@@ -107,9 +107,6 @@ const Header = ({ onOpenSidebar, isOpenSidebarDesktop, onSidebarDesktop }) => {
 						<MenuItem>
 							<List>
 								<ListItem>
-									<ListItemAvatar>
-										<Avatar src={user.picture} alt='...' />
-									</ListItemAvatar>
 									<ListItemText primary={<div>
 										<Typography align='center'>{user.user}</Typography>
 										<Typography align='center'><b>{user.username}</b></Typography>

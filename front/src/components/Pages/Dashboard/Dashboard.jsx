@@ -15,9 +15,6 @@ const Dashboard = () => {
 					<Typography sx={{ mt: 3, fontWeight: 'bold' }} variant='h2'>Exam App</Typography>
 				</Box>
 				<Grid container spacing={2}>
-					<Grid item xs={12} sm={12}>
-						<img src='https://i.imgur.com/lMyNZPm.png' alt='...' style={{ position: 'absolute', width: '50%', height: 'auto', marginTop: 30 }} />
-					</Grid>
 				</Grid>
 			</Container>
 		</Page>

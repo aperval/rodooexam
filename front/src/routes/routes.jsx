@@ -6,7 +6,7 @@ const NotFound = lazy(() => import('../components/Pages/NotFound'))
 const Login = lazy(() => import('../components/Pages/Login'))
 const Home = lazy(() => import('../components/Pages/Home'))
 const Dashboard = lazy(() => import('../components/Pages/Dashboard'))
-const Usuarios = lazy(() => import('../components/Pages/Usuarios'))
+const Productos = lazy(() => import('../components/Pages/Productos'))
 
 const routes = [
 	{
@@ -29,9 +29,9 @@ const routes = [
 				render: props => <RouteController component={Dashboard} {...props} />
 			},
 			{
-				path: `/${APP_VALUES.ROOT_ROUTE}/usuarios`,
+				path: `/${APP_VALUES.ROOT_ROUTE}/productos`,
 				exact: true,
-				render: props => <RouteController component={Usuarios} {...props} />
+				render: props => <RouteController component={Productos} {...props} />
 			},
 			{
 				path: `/${APP_VALUES.ROOT_ROUTE}/*`,

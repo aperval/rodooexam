@@ -33,7 +33,8 @@ app.post('/api/login', (req, res) => {
 				res.status(200).send({
 					"id": response.rows[0].id,
 					"user": response.rows[0].username,
-					"username": response.rows[0].username
+					"username": response.rows[0].username,
+					"isAuth": true
 				})
 			} else {
 				console.log('Usuario no existe')
@@ -98,24 +99,9 @@ app.post('/api/guardar', (req, res) => {
 })
 
 app.post('/api/editar', (req, res) => {
-	const { id, description, field, construction, address, contactphone, contactemail, bathrooms, bedrooms, parkinglots, status } = req.body
+	const { id, description, field, construction, address, contactphone, contactemail, bathrooms, bedrooms, parkinglots } = req.body
 	const databaseclient = new Client(credentials)
-	if (status = 0) {
-		databaseclient.connect()
-		databaseclient.query("UPDATE roddo.real_state_list "
-			+ " SET description='" + description + "', field=" + field + ", construction=" + construction + ", address='" + address + "', contactphone='" + contactphone + "', contactemail='" + contactemail
-			+ "', bathrooms=" + bathrooms + ", bedrooms=" + bedrooms + ", parkinglots=" + parkinglots + ", deletedate=CURRENT_TIMESTAMP, status=0 "
-			+ " WHERE id = " + id + " ")
-			.then(response => {
-				console.log('Producto Actualizado')
-				res.status(200).send({ "status": "success", "message": "Producto Actualizado" })
-				databaseclient.end()
-			}).catch(err => {
-				console.log(err)
-				res.status(500).send(err)
-				databaseclient.end()
-			})
-	} else {
+	
 		databaseclient.connect()
 		databaseclient.query("UPDATE roddo.real_state_list "
 			+ " SET description='" + description + "', field=" + field + ", construction=" + construction + ", address='" + address + "', contactphone='" + contactphone + "', contactemail='" + contactemail
@@ -130,7 +116,7 @@ app.post('/api/editar', (req, res) => {
 				res.status(500).send(err)
 				databaseclient.end()
 			})
-	}
+
 })
 
 app.listen(4000, async () => {

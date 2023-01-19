@@ -8,8 +8,8 @@ const sidebarConfig = [
 		icon: <HomeOutlined />
 	},
 	{
-		title: 'usuarios',
-		path: '/app/usuarios',
+		title: 'productos',
+		path: '/app/productos',
 		icon: <PersonOutlined />
 	}
 ]
