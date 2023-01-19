@@ -48,4 +48,20 @@ app.post('/api/login', (req, res) => {
 })
 
 
+app.get('/api/productos', (req, res) => {
+	const databaseclient = new Client(credentials)
+	databaseclient.connect()
+	databaseclient.query("SELECT * FROM roddo.real_state_list")
+	.then(response => {
+			console.log('Consulta de productos')
+			res.status(200).send(response.rows)
+			databaseclient.end()
+	}).catch(err => {
+		console.log(err)
+		res.status(500).send(err)
+		databaseclient.end()
+	})
+})
+
+
 app.listen(4000, () => console.log('servidor api arriba'))
