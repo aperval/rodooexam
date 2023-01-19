@@ -61,7 +61,7 @@ const Login = () => {
 				<CssBaseline />
 				<Grid item xs={false} sm={4} md={7}
 					sx={{
-						backgroundImage: 'url(https://wallpaperstock.net/metroid-wallpapers_20673_1440x900.jpg)',
+						backgroundImage: 'url(/src/assets/indexapp.jpg)',
 						backgroundRepeat: 'no-repeat',
 						backgroundColor: (t) =>
 							t.palette.mode === 'light' ? "#27aae1" : "#27aae1",
