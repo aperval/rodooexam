@@ -55,7 +55,7 @@ const Login = () => {
 	useEffect(init, [])
 
 	return (
-		<Page title="SAMUS | Login">
+		<Page title="Exam | Login">
 			<ToastAutoHide message={mensaje} />
 			<Grid container component="main" sx={{ height: '100vh' }}>
 				<CssBaseline />
